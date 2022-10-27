@@ -11,7 +11,6 @@ public class PassengerPlane extends Plane{
         this.passengersCapacity = passengersCapacity;
     }
 
-
     public int getPassengersCapacity() {
         return passengersCapacity;
     }
@@ -20,11 +19,9 @@ public class PassengerPlane extends Plane{
     public String toString() {
         return super.toString().replace("}",
                 ", passengersCapacity=" + passengersCapacity +
-                '}');
+                        '}');
     }
-
-
-
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,7 +30,7 @@ public class PassengerPlane extends Plane{
         PassengerPlane plane = (PassengerPlane) o;
         return passengersCapacity == plane.passengersCapacity;
     }
-
+    
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), passengersCapacity);
