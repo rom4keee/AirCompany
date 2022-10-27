@@ -1,25 +1,27 @@
+package Planes;
+
 import models.MilitaryType;
 
 import java.util.Objects;
 
-public class MilitaryPlane extends Plane {
+public class MilitaryPlane extends Plane{
 
-    private MilitaryType militaryType;
+    private MilitaryType type;
 
-    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType militaryType) {
+    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
-        this.militaryType = militaryType;
+        this.type = type;
     }
 
-    public MilitaryType getMilitaryType() {
-        return militaryType;
+    public MilitaryType getType() {
+        return type;
     }
 
     @Override
     public String toString() {
         return super.toString().replace("}",
-                ", type=" + militaryType +
-                '}');
+                ", type=" + type +
+                        '}');
     }
 
     @Override
@@ -27,12 +29,12 @@ public class MilitaryPlane extends Plane {
         if (this == o) return true;
         if (!(o instanceof MilitaryPlane)) return false;
         if (!super.equals(o)) return false;
-        MilitaryPlane that = (MilitaryPlane) o;
-        return militaryType == that.militaryType;
+        MilitaryPlane plane = (MilitaryPlane) o;
+        return type == plane.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), militaryType);
+        return Objects.hash(super.hashCode(), type);
     }
 }
